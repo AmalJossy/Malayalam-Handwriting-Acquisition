@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dataQ</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.7.4-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css" />
+    <style type="text/css">
+        html,
+        body {
+            font-family: 'Open Sans';
+        }
+
+        img {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #222222;
+            color: #ffffff;
+            text-align: center;
+            border-radius: 2.25rem;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+        #snackbar.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        /* Snackbar end */
+        body {
+            margin: 0 0;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        #canvas {
+            border: 2px solid black;
+            border-radius: 3px;
+            margin: auto;
+        }
+
+        .canvas-container {
+            margin: auto;
+        }
+
+        .icon-container {
+            display: flex;
+            width: 300px;
+            margin: auto;
+        }
+
+        .icon-container>button {
+            flex: 1;
+            border: none;
+            padding: 10px 0;
+        }
+
+        .icon-container>button:first-child {
+            border-bottom-left-radius: 5px;
+        }
+
+        .icon-container>button:last-child {
+            border-bottom-right-radius: 5px;
+        }
+
+        .icon-container>button:hover {
+            cursor: pointer;
+            background-color: #4e4d4d;
+        }
+
+        .splash {
+            padding: 6em 0 3em;
+            background-color: #2196F3;
+            color: #ffffff;
+            text-align: center;
+        }
+
+
+        .heading {
+            font-size: 30vw;
+        }
+
+        .subheading {
+            font-size: 2rem;
+            color: #ffffff80;
+        }
+
+        .header-desc {
+            font-size: 1.5rem;
+        }
+
+        .header-desc>a {
+            color: #ffffff;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        #data_contrib {
+            padding-top: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        #charSelect {
+            width: auto;
+            display: inline;
+            min-width: 3rem;
+            font-size: 1.5rem;
+            height: 4rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            .heading {
+                font-size: 8rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .md-only {
+                display: none;
+            }
+        }
+        .modal-content{
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero is-fullheight is-default is-bold">
+        <div class="hero-head">
+            <!-- <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="#"> -->
+            <!-- <img src="../images/bulma.png" alt="Logo"> -->
+            <!-- </a>
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <div class="tabs is-right">
+                                <ul>
+                                    <li class="is-active"><a>Home</a></li>
+                                    <li><a href="">Examples</a></li>
+                                    <li><a href="">Features</a></li>
+                                    <li><a href="">Team</a></li>
+                                    <li><a href="">Help</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav> -->
+        </div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="columns is-vcentered">
+                    <div class="column is-5">
+                        <figure class="image">
+                            <div class="form-group">
+                                <label for="charSelect">Current character</label>
+                                <select class="form-control" id="charSelect">
+                                </select>
+                            </div>
+                            <div id="sym_warning" class="text-danger"></div>
+                            <canvas id="canvas" width="300" height="300" class="canvas"></canvas>
+                            <div class="icon-container">
+                                <button onclick="clearCanvas()">
+                                    Clear
+                                </button>
+                                <button onclick="submitImage()">
+                                    Submit
+                                </button>
+                                <button onclick="nextChar()">
+                                    Skip
+                                </button>
+                            </div>
+                            <button id="freedraw" class="btn btn-info">Pause freedraw</button>
+                        </figure>
+                    </div>
+                    <div class="column is-6 is-offset-1">
+                        <h1 class="title is-2">
+                            Help us acquire data
+                        </h1>
+                        <h2 class="subtitle is-4">
+                            write the selected character on the canvas using touch input. Your contributions will help
+                            us with handwritten character recognition
+                        </h2>
+                        <br>
+                        <p class="has-text-centered">
+                            <a id="more-button" class="button is-medium is-info is-outlined">
+                                Learn more
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-foot">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a>No personal information is collected</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="more-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <!-- Any other Bulma elements you want -->
+            <div class="content">
+                <h4>What are we collecting?</h4>
+                <p>We are trying to collect images of malayalam handwritten characters</p>
+                <h4>Why do you need this</h4>
+                <p>The characters you provide will be used as training data for our Optical Character Recognition System. The more samples we get, the better our system will be. The samples will also be released so that more reasearch can happen.</p>
+                <h4>Who are we ?</h4>
+                <p>We are final year computer science and engineering students of TKM College of Engineering. This is part of our final year project</p>
+              </div>
+        </div>
+        <button id="more-close" class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <div id="snackbar"></div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.2.0/fabric.min.js"></script>
+    <!-- <script src="../js/bulma.js"></script> -->
+    <script>
+        let canvas;
+        var charList;
+        let fabricInit = function () {
+            document.getElementById("charSelect").options[0].selected = true;
+            canvas = window._canvas = new fabric.Canvas('canvas');
+            canvas.freeDrawingBrush.width = 8;
+            canvas.isDrawingMode = true;
+            canvas.freeDrawingBrush.color = '#000000';
+            canvas.renderAll();
+            var pause_btn = document.getElementById('freedraw');
+            pause_btn.addEventListener('click', function () {
+                canvas.isDrawingMode = !canvas.isDrawingMode;
+                if (canvas.isDrawingMode) {
+                    pause_btn.innerHTML = "Pause freedraw";
+                }
+                else {
+                    pause_btn.innerHTML = "Enable freedraw";
+                }
+            });
+            document.getElementById('charSelect').addEventListener('change', function () {
+                sym_warning(this.value);
+            });
+        };
+        function sym_warning(num) {
+            if (num > 3389 && num < 3416)
+                document.getElementById('sym_warning').innerText = "Don't trace the dotted lines";
+            else
+                document.getElementById('sym_warning').innerText = " ";
+        }
+        function postAjax(url, data, success) {
+            var params = typeof data == 'string' ? data : Object.keys(data).map(
+                function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
+            ).join('&');
+
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+            xhr.open('POST', url);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState > 3 && xhr.status == 200) { success(xhr.responseText); }
+            };
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(params);
+            return xhr;
+        }
+        function submitImage() {
+            let char = document.getElementById('charSelect').value;
+            let img = canvas.toDataURL('png');
+            showSnackbar('Uploading ' + char);
+            postAjax('dataentry', {
+                'image': img,
+                'char': char
+            }, function (data) {
+                // console.log(data);
+                showSnackbar('Uploaded ' + charList[data - 1].char);
+                if (data != 125)
+                    nextChar();
+                if (data == 125)
+                    setTimeout(() => {
+                        showSnackbar('Thank you for your time');
+                    }, 1000);
+            });
+        }
+        function clearCanvas() {
+            canvas.clear();
+        }
+        function nextChar() {
+            canvas.clear();
+            charSelect = document.getElementById('charSelect');
+            index = charSelect.selectedIndex
+            charSelect.options[index].selected = false;
+            charSelect.options[index + 1].selected = true;
+            sym_warning(document.getElementById('charSelect').value);
+            setTimeout(() => {
+                showSnackbar('Current character ' + document.getElementById('charSelect').value);
+            }, 3000);
+        }
+        function showSnackbar(text) {
+            let x = document.getElementById("snackbar");
+            x.innerText = text;
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+        }
+
+        var getChars = new XMLHttpRequest();
+        getChars.addEventListener("load", function () {
+            var charSelect = document.getElementById('charSelect');
+            charList = JSON.parse(this.responseText);
+            // console.log(charList[1].char);
+            charList.map(function (character) {
+                var option = document.createElement("option");
+                option.text = character.char;
+                // console.log(option);
+                charSelect.add(option);
+            })
+            fabricInit();
+        });
+        getChars.open("GET", "/characters");
+        getChars.send();
+        document.getElementById("more-button").addEventListener("click",function(e){
+            e.preventDefault();
+            document.getElementById("more-modal").className += " is-active";
+            document.firstElementChild.className = "is-clipped";
+        });
+        document.getElementById("more-close").addEventListener("click", function(e){
+            document.getElementById("more-modal").className = "modal";
+            document.firstElementChild.className = "";
+        })
+    </script>
+</body>
+
+</html>

@@ -11,11 +11,20 @@ const uuidv4 = require('uuid/v4');
 // admin.initializeApp(config);
 // const storage = firebase.storage();
 // var bucket = admin.storage().bucket();
+
 const { Storage } = require('@google-cloud/storage');
-const storage = new Storage({
-    projectId: "ocrdata-50808",
-    credentials: JSON.parse(process.env['SERVICEACCOUNT'])
-});
+let storage;
+if (process.env.NODE_ENV == 'production') {
+    storage = new Storage({
+        projectId: "ocrdata-50808",
+        credentials: JSON.parse(process.env['SERVICEACCOUNT'])
+    });
+} else {
+    storage = new Storage({
+        projectId: "ocrdata-50808",
+        keyFilename: "server/serviceAccountKey.json"
+    });
+}
 const bucket = storage.bucket("gs://ocrdata-50808.appspot.com");
 app.use(express.static(path.resolve(__dirname, '../public')));
 app.use(bodyParser.json())

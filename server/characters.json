@@ -208,295 +208,279 @@
         "label": 52
     },
     {
-        "char": "ൈ",
+        "char": "്",
         "label": 53
     },
     {
-        "char": "ൊ",
+        "char": "്യ",
         "label": 54
     },
     {
-        "char": "ോ",
+        "char": "്ര",
         "label": 55
     },
     {
-        "char": "ൌ",
+        "char": "്വ",
         "label": 56
     },
     {
-        "char": "്",
+        "char": "ക്ക",
         "label": 57
     },
     {
-        "char": "്യ",
+        "char": "ക്ല",
         "label": 58
     },
     {
-        "char": "്ര",
+        "char": "ക്ഷ",
         "label": 59
     },
     {
-        "char": "്വ",
+        "char": "ക്ത",
         "label": 60
     },
     {
-        "char": "ക്ക",
+        "char": "ഗ്ഗ",
         "label": 61
     },
     {
-        "char": "ക്ല",
+        "char": "ഗ്ല",
         "label": 62
     },
     {
-        "char": "ക്ഷ",
+        "char": "ഗ്ന",
         "label": 63
     },
     {
-        "char": "ക്ത",
+        "char": "ഗ്മ",
         "label": 64
     },
     {
-        "char": "ഗ്ഗ",
+        "char": "ങ്ക",
         "label": 65
     },
     {
-        "char": "ഗ്ല",
+        "char": "ങ്ങ",
         "label": 66
     },
     {
-        "char": "ഗ്ന",
+        "char": "ച്ച",
         "label": 67
     },
     {
-        "char": "ഗ്മ",
+        "char": "ച്ഛ",
         "label": 68
     },
     {
-        "char": "ങ്ക",
+        "char": "ജ്ജ",
         "label": 69
     },
     {
-        "char": "ങ്ങ",
+        "char": "ജ്ഞ",
         "label": 70
     },
     {
-        "char": "ച്ച",
+        "char": "ഞ്ച",
         "label": 71
     },
     {
-        "char": "ച്ഛ",
+        "char": "ഞ്ഞ",
         "label": 72
     },
     {
-        "char": "ജ്ജ",
+        "char": "ട്ട",
         "label": 73
     },
     {
-        "char": "ജ്ഞ",
+        "char": "ഡ്ഡ",
         "label": 74
     },
     {
-        "char": "ഞ്ച",
+        "char": "ണ്ട",
         "label": 75
     },
     {
-        "char": "ഞ്ഞ",
+        "char": "ണ്ഡ",
         "label": 76
     },
     {
-        "char": "ട്ട",
+        "char": "ണ്മ",
         "label": 77
     },
     {
-        "char": "ഡ്ഡ",
+        "char": "ണ്ണ",
         "label": 78
     },
     {
-        "char": "ണ്ട",
+        "char": "ത്ത",
         "label": 79
     },
     {
-        "char": "ണ്ഡ",
+        "char": "ത്ഥ",
         "label": 80
     },
     {
-        "char": "ണ്മ",
+        "char": "ത്ഭ",
         "label": 81
     },
     {
-        "char": "ണ്ണ",
+        "char": "ത്സ",
         "label": 82
     },
     {
-        "char": "ത്ത",
+        "char": "ത്മ",
         "label": 83
     },
     {
-        "char": "ത്ഥ",
+        "char": "ദ്ദ",
         "label": 84
     },
     {
-        "char": "ത്ഭ",
+        "char": "ദ്ധ",
         "label": 85
     },
     {
-        "char": "ത്സ",
+        "char": "ന്‍റ",
         "label": 86
     },
     {
-        "char": "ത്മ",
+        "char": "ന്ത",
         "label": 87
     },
     {
-        "char": "ദ്ദ",
+        "char": "ന്ദ",
         "label": 88
     },
     {
-        "char": "ദ്ധ",
+        "char": "ന്ന",
         "label": 89
     },
     {
-        "char": "ന്‍റ",
+        "char": "ന്മ",
         "label": 90
     },
     {
-        "char": "ന്ത",
+        "char": "ന്ഥ",
         "label": 91
     },
     {
-        "char": "ന്ദ",
+        "char": "പ്പ",
         "label": 92
     },
     {
-        "char": "ന്ന",
+        "char": "പ്ല",
         "label": 93
     },
     {
-        "char": "ന്മ",
+        "char": "ബ്ബ",
         "label": 94
     },
     {
-        "char": "ന്ഥ",
+        "char": "ബ്ല",
         "label": 95
     },
     {
-        "char": "പ്പ",
+        "char": "ബ്ധ",
         "label": 96
     },
     {
-        "char": "പ്ല",
+        "char": "ബ്ദ",
         "label": 97
     },
     {
-        "char": "ബ്ബ",
+        "char": "മ്പ",
         "label": 98
     },
     {
-        "char": "ബ്ല",
+        "char": "മ്മ",
         "label": 99
     },
     {
-        "char": "ബ്ധ",
+        "char": "മ്ല",
         "label": 100
     },
     {
-        "char": "ബ്ദ",
+        "char": "യ്യ",
         "label": 101
     },
     {
-        "char": "മ്പ",
+        "char": "ല്ല",
         "label": 102
     },
     {
-        "char": "മ്മ",
+        "char": "വ്വ",
         "label": 103
     },
     {
-        "char": "മ്ല",
+        "char": "ശ്ശ",
         "label": 104
     },
     {
-        "char": "യ്യ",
+        "char": "ശ്ല",
         "label": 105
     },
     {
-        "char": "ല്ല",
+        "char": "ശ്ച",
         "label": 106
     },
     {
-        "char": "വ്വ",
+        "char": "ഷ്ട",
         "label": 107
     },
     {
-        "char": "ശ്ശ",
+        "char": "സ്ല",
         "label": 108
     },
     {
-        "char": "ശ്ല",
+        "char": "സ്സ",
         "label": 109
     },
     {
-        "char": "ശ്ച",
+        "char": "സ്റ്റ",
         "label": 110
     },
     {
-        "char": "ഷ്ട",
+        "char": "സ്ധ",
         "label": 111
     },
     {
-        "char": "സ്ല",
+        "char": "സ്ഥ",
         "label": 112
     },
     {
-        "char": "സ്സ",
+        "char": "ഹ്മ",
         "label": 113
     },
     {
-        "char": "സ്റ്റ",
+        "char": "ഹ്ന",
         "label": 114
     },
     {
-        "char": "സ്ധ",
+        "char": "ള്ള",
         "label": 115
     },
     {
-        "char": "സ്ഥ",
+        "char": "റ്റ",
         "label": 116
     },
     {
-        "char": "ഹ്മ",
+        "char": "ന്‍",
         "label": 117
     },
     {
-        "char": "ഹ്ന",
+        "char": "ല്‍",
         "label": 118
     },
     {
-        "char": "ള്ള",
+        "char": "ര്‍",
         "label": 119
     },
     {
-        "char": "റ്റ",
+        "char": "ള്‍",
         "label": 120
     },
     {
-        "char": "ന്‍",
-        "label": 121
-    },
-    {
-        "char": "ല്‍",
-        "label": 122
-    },
-    {
-        "char": "ര്‍",
-        "label": 123
-    },
-    {
-        "char": "ള്‍",
-        "label": 124
-    },
-    {
         "char": "ണ്‍",
-        "label": 125
+        "label": 121
     }
 ]

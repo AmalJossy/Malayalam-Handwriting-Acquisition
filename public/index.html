@@ -373,8 +373,9 @@
             charSelect = document.getElementById('charSelect');
             index = charSelect.selectedIndex
             charSelect.options[index].selected = false;
+            charSelect.options[index+1].selected = true;
 
-            charSelect.options[ Math.floor(index + Math.random()*121)%121].selected = true;
+            // charSelect.options[ Math.floor(index + Math.random()*121)%121].selected = true;
             sym_warning(document.getElementById('charSelect').value);
             setTimeout(() => {
                 showSnackbar('Current character ' + document.getElementById('charSelect').value);

@@ -1,16 +1,8 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-// const fs = require("fs");
 const bodyParser = require('body-parser');
 const uuidv4 = require('uuid/v4');
-// const firebase = require('firebase');
-// const admin = require('firebase-admin');
-// const config = require('./config');
-// firebase.initializeApp(config);
-// admin.initializeApp(config);
-// const storage = firebase.storage();
-// var bucket = admin.storage().bucket();
 
 const { Storage } = require('@google-cloud/storage');
 let storage;
@@ -40,47 +32,31 @@ const charlist = require("./characters.json");
 app.get("/characters", (req, res) => {
     res.send(charlist);
 })
-// app.get("/test/:id", (req, res) => {
-//     const image = bucket.file(`char${req.params.id}/001.png`);
-//     image.createReadStream()
-//         .on('error', function (err) { res.send("Error"); })
-//         .on('response', function (response) {
-//             // Server connected and responded with the specified status and headers.
-//         })
-//         .on('end', function () {
-//             // The file is fully downloaded.
-//             res.send("Success");
-//         })
-//         .pipe(fs.createWriteStream('out2.png'));
-// })
 app.post("/dataentry", (req, res) => {
     var base64Data = req.body.image.replace(/^data:image\/png;base64,/, "");
-    const selectedchar = charlist.filter(char => char.char == req.body.char);
-    const label = selectedchar[0].label;
-    const image = bucket.file(`char${label}/${uuidv4()}.png`);
-    const imageBuffer = Buffer.from(base64Data, 'base64');
-    image.save(imageBuffer, {
-        metadata: { contentType: 'image/png' },
-        public: true,
-        validation: 'md5'
-    }, function (error) {
+    const selectedchar = charlist.filter(char => char == req.body.char)[0];
+    console.log(selectedchar);
+    if (!selectedchar) {
+        console.log('Nope');
+        res.status(403).send("Nope");
+    }
+    else {
+        const image = bucket.file(`${selectedchar}/${uuidv4()}.png`);
+        const imageBuffer = Buffer.from(base64Data, 'base64');
+        image.save(imageBuffer, {
+            metadata: { contentType: 'image/png' },
+            public: true,
+            validation: 'md5'
+        }, function (error) {
 
-        if (error) {
-            console.log("Error" + error);
-        }
+            if (error) {
+                console.log("Error" + error);
+            }
 
-        console.log(`char${label} written`);
-        res.status(200).send("" + label);
-    });
-    // fs.mkdir(`data/char${label}`, function (err) { console.log(err); });
-    // fs.writeFile(`data/char${label}/out.png`, base64Data, 'base64', function (err) {
-    //     if (err) {
-    //         console.log(err);
-    //     } else {
-    //         console.log(`char${label} written`);
-    //     }
-    // });
-    // res.status(200).send("അ");
+            console.log(`${selectedchar} written`);
+            res.status(200).send(selectedchar);
+        });
+    }
 })
 
 app.listen(process.env.PORT || 3000, () => {

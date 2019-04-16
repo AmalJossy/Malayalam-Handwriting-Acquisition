@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css" />
     <meta name=”description” content="Show us how you write Malayalam">
     <style type="text/css">
+        @font-face {
+            font-family: 'Manjari';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+            src: url(Manjari-Regular.woff2) format('woff2'), url(Manjari-Regular.woff?v=1.0) format('woff'), url(Manjari-Regular.ttf?v=1.0) format('truetype');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+        }
+
         html,
         body {
             font-family: 'Open Sans';
@@ -174,10 +183,14 @@
 
         #charSelect {
             width: auto;
-            display: inline;
             min-width: 3rem;
             font-size: 1.5rem;
             height: 4rem;
+            font-family: "Manjari", sans-serif;
+        }
+
+        .n {
+            font-family: "Open Sans";
         }
 
         @media screen and (min-width: 768px) {
@@ -191,7 +204,8 @@
                 display: none;
             }
         }
-        .modal-content{
+
+        .modal-content {
             background-color: #ffffff;
             padding: 20px;
             border-radius: 20px;
@@ -238,6 +252,131 @@
                             <div class="form-group">
                                 <label for="charSelect">Current character</label>
                                 <select class="form-control" id="charSelect">
+                                    <option> അ</option>
+                                    <option> ആ</option>
+                                    <option> ഇ</option>
+                                    <option> ഉ</option>
+                                    <option> ഋ</option>
+                                    <option> എ</option>
+                                    <option> ഏ</option>
+                                    <option> ഒ</option>
+                                    <option> ക</option>
+                                    <option> ക്ക</option>
+                                    <option> ക്ത</option>
+                                    <option> ക്ല</option>
+                                    <option> ക്ഷ</option>
+                                    <option> ഖ</option>
+                                    <option> ഗ</option>
+                                    <option> ഗ്ഗ</option>
+                                    <option> ഗ്ന</option>
+                                    <option> ഗ്മ</option>
+                                    <option> ഗ്ല</option>
+                                    <option> ഘ</option>
+                                    <option> ങ</option>
+                                    <option> ങ്ക</option>
+                                    <option> ങ്ങ</option>
+                                    <option> ച</option>
+                                    <option> ച്ച</option>
+                                    <option> ച്ഛ</option>
+                                    <option> ഛ</option>
+                                    <option> ജ</option>
+                                    <option> ജ്ജ</option>
+                                    <option> ജ്ഞ</option>
+                                    <option> ഝ</option>
+                                    <option> ഞ</option>
+                                    <option> ഞ്ച</option>
+                                    <option> ഞ്ഞ</option>
+                                    <option> ട</option>
+                                    <option> ട്ട</option>
+                                    <option> ഠ</option>
+                                    <option> ഡ</option>
+                                    <option> ഡ്ഡ</option>
+                                    <option> ഢ</option>
+                                    <option> ണ</option>
+                                    <option> ണ്‍</option>
+                                    <option> ണ്ട</option>
+                                    <option> ണ്ഡ</option>
+                                    <option> ണ്ണ</option>
+                                    <option> ണ്മ</option>
+                                    <option> ത</option>
+                                    <option> ത്ത</option>
+                                    <option> ത്ഥ</option>
+                                    <option> ത്ഭ</option>
+                                    <option> ത്മ</option>
+                                    <option> ത്സ</option>
+                                    <option> ഥ</option>
+                                    <option> ദ</option>
+                                    <option> ദ്ദ</option>
+                                    <option> ദ്ധ</option>
+                                    <option> ധ</option>
+                                    <option> ന</option>
+                                    <option> ന്‍</option>
+                                    <option> ന്ത</option>
+                                    <option> ന്ഥ</option>
+                                    <option> ന്ദ</option>
+                                    <option> ന്ധ</option>
+                                    <option> ന്ന</option>
+                                    <option> ന്മ</option>
+                                    <option> ന്‍റ</option>
+                                    <option> പ</option>
+                                    <option> പ്പ</option>
+                                    <option> പ്ല</option>
+                                    <option> ഫ</option>
+                                    <option> ഫ്ല</option>
+                                    <option> ബ</option>
+                                    <option> ബ്ദ</option>
+                                    <option class="n"> ബ്ധ</option>
+                                    <option> ബ്ബ</option>
+                                    <option> ബ്ല</option>
+                                    <option> ഭ</option>
+                                    <option> മ</option>
+                                    <option> മ്പ</option>
+                                    <option> മ്മ</option>
+                                    <option> മ്ല</option>
+                                    <option> യ</option>
+                                    <option> യ്യ</option>
+                                    <option> ര</option>
+                                    <option> ര്‍</option>
+                                    <option> റ</option>
+                                    <option> റ്റ</option>
+                                    <option> ല</option>
+                                    <option> ല്‍</option>
+                                    <option> ല്ല</option>
+                                    <option> ള</option>
+                                    <option> ള്‍</option>
+                                    <option> ള്ള</option>
+                                    <option> ഴ</option>
+                                    <option> വ</option>
+                                    <option> വ്വ</option>
+                                    <option> ശ</option>
+                                    <option> ശ്ച</option>
+                                    <option> ശ്ല</option>
+                                    <option> ശ്ശ</option>
+                                    <option> ഷ</option>
+                                    <option> ഷ്ട</option>
+                                    <option> സ</option>
+                                    <option> സ്ഥ</option>
+                                    <option class="n"> സ്ധ</option>
+                                    <option> സ്റ്റ</option>
+                                    <option> സ്ല</option>
+                                    <option> സ്സ</option>
+                                    <option> ഹ</option>
+                                    <option> ഹ്ന</option>
+                                    <option> ഹ്മ</option>
+                                    <option> ഹ്ല</option>
+                                    <option> ാ</option>
+                                    <option> ി</option>
+                                    <option> ീ</option>
+                                    <option> ു</option>
+                                    <option> ൂ</option>
+                                    <option> ൃ</option>
+                                    <option> െ</option>
+                                    <option> േ</option>
+                                    <option> ൗ</option>
+                                    <option> ്</option>
+                                    <option> ്യ</option>
+                                    <option> ്ര</option>
+                                    <option> ്വ</option>
                                 </select>
                             </div>
                             <div id="sym_warning" class="text-danger"></div>
@@ -293,10 +432,13 @@
                 <h4>What are we collecting?</h4>
                 <p>We are trying to collect images of malayalam handwritten characters</p>
                 <h4>Why do you need this</h4>
-                <p>The characters you provide will be used as training data for our Optical Character Recognition System. The more samples we get, the better our system will be. The samples will also be released so that more reasearch can happen.</p>
+                <p>The characters you provide will be used as training data for our Optical Character Recognition
+                    System. The more samples we get, the better our system will be. The samples will also be released so
+                    that more reasearch can happen.</p>
                 <h4>Who are we ?</h4>
-                <p>We are final year computer science and engineering students of TKM College of Engineering. This is part of our final year project</p>
-              </div>
+                <p>We are final year computer science and engineering students of TKM College of Engineering. This is
+                    part of our final year project</p>
+            </div>
         </div>
         <button id="more-close" class="modal-close is-large" aria-label="close"></button>
     </div>
@@ -307,7 +449,7 @@
         let canvas;
         var charList;
         let fabricInit = function () {
-            document.getElementById("charSelect").options[0].selected = true;
+            document.getElementById('charSelect').selectedIndex = Math.floor(Math.random() * 121) % 121;
             canvas = window._canvas = new fabric.Canvas('canvas');
             canvas.freeDrawingBrush.width = 8;
             canvas.isDrawingMode = true;
@@ -328,7 +470,7 @@
             });
         };
         function sym_warning(num) {
-            if (num > 3389 && num < 3416)
+            if (num >= 'ാ')
                 document.getElementById('sym_warning').innerText = "Don't trace the dotted lines";
             else
                 document.getElementById('sym_warning').innerText = " ";
@@ -356,11 +498,10 @@
                 'image': img,
                 'char': char
             }, function (data) {
-                // console.log(data);
-                showSnackbar('Uploaded ' + charList[data - 1].char);
-                if (data != 125)
+                showSnackbar('Uploaded ' + data);
+                if (data != "്വ")
                     nextChar();
-                if (data == 125)
+                if (data == "്വ")
                     setTimeout(() => {
                         showSnackbar('Thank you for your time');
                     }, 1000);
@@ -372,11 +513,7 @@
         function nextChar() {
             canvas.clear();
             charSelect = document.getElementById('charSelect');
-            index = charSelect.selectedIndex
-            charSelect.options[index].selected = false;
-            charSelect.options[index+1].selected = true;
-
-            // charSelect.options[ Math.floor(index + Math.random()*121)%121].selected = true;
+            charSelect.selectedIndex++;
             sym_warning(document.getElementById('charSelect').value);
             setTimeout(() => {
                 showSnackbar('Current character ' + document.getElementById('charSelect').value);
@@ -389,30 +526,21 @@
             setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         }
 
-        var getChars = new XMLHttpRequest();
-        getChars.addEventListener("load", function () {
-            var charSelect = document.getElementById('charSelect');
-            charList = JSON.parse(this.responseText);
-            // console.log(charList[1].char);
-            charList.map(function (character) {
-                var option = document.createElement("option");
-                option.text = character.char;
-                // console.log(option);
-                charSelect.add(option);
-            })
-            fabricInit();
-        });
-        getChars.open("GET", "/characters");
-        getChars.send();
-        document.getElementById("more-button").addEventListener("click",function(e){
+       
+        fabricInit();
+
+        
+        document.getElementById("more-button").addEventListener("click", function (e) {
             e.preventDefault();
             document.getElementById("more-modal").className += " is-active";
             document.firstElementChild.className = "is-clipped";
         });
-        document.getElementById("more-close").addEventListener("click", function(e){
+        document.getElementById("more-close").addEventListener("click", function (e) {
             document.getElementById("more-modal").className = "modal";
             document.firstElementChild.className = "";
         })
+
+
     </script>
 </body>
 

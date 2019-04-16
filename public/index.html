@@ -448,6 +448,7 @@
     <script>
         let canvas;
         var charList;
+        var count=0;
         let fabricInit = function () {
             document.getElementById('charSelect').selectedIndex = Math.floor(Math.random() * 121) % 121;
             canvas = window._canvas = new fabric.Canvas('canvas');
@@ -499,18 +500,21 @@
                 'char': char
             }, function (data) {
                 showSnackbar('Uploaded ' + data);
-                if (data != "്വ")
+                if (count < 125){
                     nextChar();
-                if (data == "്വ")
+                }
+                else{
                     setTimeout(() => {
                         showSnackbar('Thank you for your time');
                     }, 1000);
+                }
             });
         }
         function clearCanvas() {
             canvas.clear();
         }
         function nextChar() {
+            count++;
             canvas.clear();
             charSelect = document.getElementById('charSelect');
             charSelect.selectedIndex++;
